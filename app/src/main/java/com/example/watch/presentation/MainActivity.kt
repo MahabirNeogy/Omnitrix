@@ -47,6 +47,7 @@ fun WearApp() {
 @Composable
 fun OmnitrixDesign() {
     // Omnitrix Design
+    // Color of the Omnitrix
     var col= Color.Green
     Box(
         modifier = Modifier
