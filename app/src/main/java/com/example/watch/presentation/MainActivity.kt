@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -46,6 +47,7 @@ fun WearApp() {
 @Composable
 fun OmnitrixDesign() {
     // Omnitrix Design
+    var col= Color.Green
     Box(
         modifier = Modifier
             .size(200.dp) // Size of the Omnitrix
@@ -57,9 +59,11 @@ fun OmnitrixDesign() {
 
 
         // Green Centerpiece
-        Canvas(modifier = Modifier.size(100.dp)) {
+        Canvas(modifier = Modifier.size(100.dp).clickable {
+            col = if (col == Color.Green) Color.Red else Color.Green
+        }) {
             drawCircle(
-                color = Color.Green,
+                color = col,
                 radius = size.minDimension / 2+29
             )
         }
